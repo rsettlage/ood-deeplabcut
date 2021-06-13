@@ -32,4 +32,7 @@ RUN conda install -c anaconda glib=2.56.1 && \
     pip3 install wxPython-4.0.7-cp37-cp37m-linux_x86_64.whl && \
     pip3 install deeplabcut[gui] && \
     rm wxPython-4.0.7-cp37-cp37m-linux_x86_64.whl
-COPY ./run.sh /run.sh
+##COPY ./run.sh /run.sh
+RUN echo "#!/bin/bash \n 
+    source activate DLC-CPU \n
+    python -m deeplabcut" > /run.sh
