@@ -1,3 +1,4 @@
+## this will ultimately be a singularity container
 FROM ubuntu:18.04
 MAINTAINER Robert Settlage
 
@@ -31,3 +32,4 @@ RUN conda install -c anaconda glib=2.56.1 && \
     pip3 install wxPython-4.0.7-cp37-cp37m-linux_x86_64.whl && \
     pip3 install deeplabcut[gui] && \
     rm wxPython-4.0.7-cp37-cp37m-linux_x86_64.whl
+COPY ./run.sh /run.sh
