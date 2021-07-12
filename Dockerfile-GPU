@@ -40,7 +40,8 @@ COPY ./DEEPLABCUT.yaml ./
 RUN conda env create -f DEEPLABCUT.yaml
 SHELL ["conda", "run", "-n", "DEEPLABCUT", "/bin/bash", "-c"]
 RUN conda install tensorflow-gpu==1.15.0
-RUN conda install -c conda-forge wxpython
+#RUN conda install -c conda-forge wxpython
 RUN pip install deeplabcut
-#COPY ./run.sh /run.sh
-RUN echo "#!/bin/bash \n source activate DEEPLABCUT \n python -m deeplabcut"> /run.sh 
+RUN echo "#!/bin/bash" > run.sh && \
+    echo "source activate DEEPLABCUT" >> run.sh && \
+    echo "python -m deeplabcut" >> /run.sh 
