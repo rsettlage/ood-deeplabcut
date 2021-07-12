@@ -1,0 +1,18 @@
+name: DEEPLABCUT
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.7
+  - pip
+  - jupyter
+  - nb_conda
+  - pytables
+  - ffmpeg
+  - six 
+  - wheel 
+  - setuptools
+#  - pip:
+#    - tensorflow-gpu==1.15.0
+    #- deeplabcut
+#    - deeplabcut[gui]
