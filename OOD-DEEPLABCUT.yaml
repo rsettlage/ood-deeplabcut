@@ -1,4 +1,4 @@
-name: DEEPLABCUT
+name: OOD-DEEPLABCUT
 channels:
   - conda-forge
   - defaults
