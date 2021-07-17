@@ -6,7 +6,7 @@ ENV LANG en_US.UTF-8
 ENV TZ=America/New_York
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y && \
-    DEBIAN_FRONTEND=noninteractive apt-get -y install gcc-9 wget gnupg software-properties-common && \
+    DEBIAN_FRONTEND=noninteractive apt-get -y install curl gcc-9 wget gnupg software-properties-common && \
     add-apt-repository ppa:graphics-drivers/ppa && \
     apt-get install -y ubuntu-drivers-common
 
@@ -37,8 +37,10 @@ ENV PATH=/miniconda3/envs/DEEPLABCUT/bin:$PATH
 ##### fix inconsistency between Anaconda glib and Ubuntu version
 # Install DeepLabCut
 
-COPY ./OOD-DEEPLABCUT.yaml ./
-COPY ./OOD-install.sh ./
+## install at runtime
+
+#COPY ./OOD-DEEPLABCUT.yaml ./
+#COPY ./OOD-install.sh ./
 #RUN conda env create -f DEEPLABCUT.yaml
 #SHELL ["conda", "run", "-n", "DEEPLABCUT", "/bin/bash", "-c"]
 #RUN conda install tensorflow-gpu==1.15.0
