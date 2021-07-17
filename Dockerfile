@@ -18,7 +18,7 @@ RUN wget --progress=dot:mega https://developer.download.nvidia.com/compute/cuda/
 
 RUN apt-key add /var/cuda-repo-ubuntu2004-11-3-local/7fa2af80.pub && \
     DEBIAN_FRONTEND=noninteractive apt-get update -y && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y libcanberra-gtk-module libcanberra-gtk3-module && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y libXxf86vm libcanberra-gtk-module libcanberra-gtk3-module && \
     DEBIAN_FRONTEND=noninteractive apt-get clean -y
 
 #    DEBIAN_FRONTEND=noninteractive apt-get install -y cuda libcanberra-gtk-module libcanberra-gtk3-module
