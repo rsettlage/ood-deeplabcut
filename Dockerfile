@@ -53,7 +53,7 @@ ENV PATH=/miniconda3/envs/DEEPLABCUT/bin:$PATH
 #RUN pip install deeplabcut && \
 #    bash /anaconda3/envs/DEEPLABCUT/lib/python3.7/site-packages/deeplabcut/pose_estimation_tensorflow/models/pretrained/download.sh
 RUN echo "#!/bin/bash" > run.sh && \
-    echo "source activate OOD-DEEPLABCUT" >> run.sh && \
+    echo "source activate OOD-DEEPLABCUT-2.2" >> run.sh && \
     echo "python -m deeplabcut" >> /run.sh 
 
 
