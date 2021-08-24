@@ -6,9 +6,13 @@ ENV LANG en_US.UTF-8
 ENV TZ=America/New_York
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y && \
-    DEBIAN_FRONTEND=noninteractive apt-get -y install curl build-essential gcc-9 libsm6 libxext6 libxrender-dev wget gnupg software-properties-common gstreamer && \
+    DEBIAN_FRONTEND=noninteractive apt-get -y install curl build-essential gcc-9 libsm6 libxext6 libxrender-dev wget gnupg software-properties-common && \
     add-apt-repository ppa:graphics-drivers/ppa && \
     apt-get install -y ubuntu-drivers-common
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good \
+    gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-doc gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa \
+    gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio
 
 RUN wget --progress=dot:mega https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin && \
     mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600 && \
