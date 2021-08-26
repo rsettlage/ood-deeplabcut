@@ -23,7 +23,7 @@ ENV PATH=/miniconda3/bin:$PATH
 ENV PATH=/miniconda3/envs/DEEPLABCUT/bin:$PATH
 
 #Install wxpython prereqs
-RUN apt-get update && apt-get install -y  conda libxxf86vm1 python3-wxgtk4.0 adwaita-icon-theme-full libatk-adaptor libcanberra-gtk-module
+RUN apt-get update && apt-get install -y libxxf86vm1 python3-wxgtk4.0 adwaita-icon-theme-full libatk-adaptor libcanberra-gtk-module
 
 #Get deeplabcut conda env
 RUN mkdir /apps && cd /apps
