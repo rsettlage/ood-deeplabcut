@@ -1,7 +1,11 @@
 FROM ubuntu:20.04
 
-export DEBIAN_FRONTEND=noninteractive
-export TZ=America/New_York
+FROM ubuntu:20.04
+MAINTAINER Robert Settlage
+
+ENV LANG en_US.UTF-8
+ENV TZ=America/New_York
+ARG DEBIAN_FRONTEND=noninteractive
 
 #Install prereqs
 RUN apt-get update && apt-get install --no-install-recommends -y locales ca-certificates python3.8 python3.8-dev tzdata wget curl gpg
