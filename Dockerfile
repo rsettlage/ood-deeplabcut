@@ -1,6 +1,4 @@
 FROM ubuntu:20.04
-
-FROM ubuntu:20.04
 MAINTAINER Robert Settlage
 
 ENV LANG en_US.UTF-8
